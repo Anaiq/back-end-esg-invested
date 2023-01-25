@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify, make_response, abort
 from app import db
-# from app.models.model import Model
+from app.models.user import User
+from app.models.transaction import Transaction
+from app.models.stock import Stock
 import os, requests
 # from app.routes import validate_model
 
@@ -21,6 +23,19 @@ users = [
 
 # create blueprint here
 user_bp = Blueprint("User", __name__, url_prefix="/users")
+
+#VALIDATE MODEL
+def validate_model(class_obj,id):
+    try:
+        id = int(id)
+    except:
+        abort(make_response({"message":f"{id} is an invalid id"}, 400))
+    query_result = class_obj.query.get(id)
+    if not query_result:
+        abort(make_response({"message":f"{id} not found"}, 404))
+
+    return query_result
+    
 
 # routes go here
 @user_bp.route("", methods=["GET"])

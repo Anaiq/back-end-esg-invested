@@ -22,7 +22,9 @@ def create_app(test_config=None):
         app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLALCHEMY_TEST_DATABASE_URI")
 
     # import models here
-    # e.g. from app.models.model import Model
+    from app.models.user import User
+    from app.models.transaction import Transaction
+    from app.models.stock import Stock
 
 
     db.init_app(app)

@@ -1,6 +1,8 @@
 from werkzeug.exceptions import HTTPException
 # from app.routes import validate_model
-# from app.models.model import Model
+from app.models.user import User
+from app.models.transaction import Transaction
+from app.models.stock import Stock
 import pytest
 
 

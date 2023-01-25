@@ -1,6 +1,8 @@
 import pytest
 from app import create_app
-# from app.models.model import Model
+from app.models.user import User
+from app.models.transaction import Transaction
+from app.models.stock import Stock
 from app import db
 
 @pytest.fixture
