@@ -9,7 +9,7 @@ class Transaction(db.Model):
     number_stock_shares = db.Column(db.Integer)
     transaction_total_value = db.Column(db.Numeric)
     transaction_type = db.Column(db.String)
-    transaction_time = db.Column(db.DateTime) # TIMESTAMP??
+    transaction_time = db.Column(db.DateTime)
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
     user = db.relationship("User", back_populates="transactions")
     stock_id = db.Column(db.Integer, db.ForeignKey("stock.stock_id"))
