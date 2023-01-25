@@ -5,9 +5,9 @@ from app import db
 class Stock(db.Model):
     stock_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     stock_symbol = db.Column(db.String)
-    environment_score = db.Column(db.Integer)
-    social_score = db.Column(db.Integer)
-    government_score = db.Column(db.Integer)
+    environment_score = db.Column(db.String)
+    social_score = db.Column(db.String)
+    government_score = db.Column(db.String)
     transactions = db.relationship("Transaction", back_populates="stock", lazy=True)
 
 

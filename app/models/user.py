@@ -11,12 +11,12 @@ class User(db.Model):
     total_shares_sales = db.Column(db.Integer)
     total_shares_cash_value = db.Column(db.Numeric)
     total_assets_balance = db.Column(db.Numeric)
-    current_e_average_score = db.Column(db.Integer)
-    current_s_average_score = db.Column(db.Integer)
-    current_g_average_score = db.Column(db.Integer)
-    e_goal_average = db.Column(db.Integer)
-    s_goal_average = db.Column(db.Integer)
-    g_goal_average = db.Column(db.Integer)
+    current_e_score = db.Column(db.String)
+    current_s_score = db.Column(db.String)
+    current_g_score = db.Column(db.String)
+    e_goal = db.Column(db.String)
+    s_goal = db.Column(db.String)
+    g_goal = db.Column(db.String)
     transactions = db.relationship("Transaction", back_populates="user", lazy=True)
 
 
@@ -35,12 +35,12 @@ class User(db.Model):
             "total_shares_sales": self.total_shares_sales,
             "total_shares_cash_value": self.total_shares_cash_value,
             "total_assets_balance": self.total_assets_balance,
-            "current_e_average_score": self.current_e_average_score,
-            "current_s_average_score": self.current_s_average_score,
-            "current_g_average_score": self.current_g_average_score,
-            "e_goal_average": self.e_goal_average,
-            "s_goal_average": self.s_goal_average,
-            "g_goal_average": self.g_goal_average,
+            "current_e_score": self.current_e_score,
+            "current_s_score": self.current_s_score,
+            "current_g_score": self.current_g_score,
+            "e_goal": self.e_goal,
+            "s_goal": self.s_goal,
+            "g_goal": self.g_goal,
             "transactions": transactions_list
         }
 
@@ -57,10 +57,10 @@ class User(db.Model):
             total_shares_sales=request_body["total_shares_sales"],
             total_shares_cash_value=request_body["total_shares_cash_value"],
             total_assets_balance=request_body["total_assets_balance"],
-            current_e_average_score=request_body["current_e_average_score"],
-            current_s_average_score=request_body["current_s_average_score"],
-            current_g_average_score=request_body["current_g_average_score"],
-            e_goal_average=request_body["e_goal_average"],
-            s_goal_average=request_body["s_goal_average"],
-            g_goal_average=request_body["g_goal_average"],
+            current_e_score=request_body["current_e_score"],
+            current_s_score=request_body["current_s_score"],
+            current_g_score=request_body["current_g_score"],
+            e_goal=request_body["e_goal"],
+            s_goal=request_body["s_goal"],
+            g_goal=request_body["g_goal"],
         )
