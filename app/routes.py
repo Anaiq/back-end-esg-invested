@@ -4,7 +4,6 @@ from app.models.user import User
 from app.models.transaction import Transaction
 from app.models.stock import Stock
 import os, requests
-# from app.routes import validate_model
 
 class User:
     def __init__(self, user_id, username, password, is_logged_in):
@@ -35,7 +34,7 @@ def validate_model(class_obj,id):
         abort(make_response({"message":f"{id} not found"}, 404))
 
     return query_result
-    
+
 
 # routes go here
 @user_bp.route("", methods=["GET"])
