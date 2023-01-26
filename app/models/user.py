@@ -3,9 +3,9 @@ from app import db
 # ONE to many relationship with Transaction
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
-    user_name = db.Column(db.String)
-    password = db.Column(db.String)
-    is_logged_in = db.Column(db.Boolean)
+    user_name = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
+    is_logged_in = db.Column(db.Boolean, nullable=False)
     cash_balance = db.Column(db.Numeric)
     total_shares_buys = db.Column(db.Integer)
     total_shares_sales = db.Column(db.Integer)
