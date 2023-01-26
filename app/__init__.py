@@ -25,6 +25,7 @@ def create_app(test_config=None):
     from app.models.user import User
     from app.models.transaction import Transaction
     from app.models.stock import Stock
+    from app.models.exchange import Exchange
 
 
     db.init_app(app)

@@ -8,7 +8,7 @@ class Exchange(db.Model):
     current_stock_price = db.Column(db.Numeric)
     environment_score = db.Column(db.String)
     social_score = db.Column(db.String)
-    government_score = db.Column(db.String)
+    governance_score = db.Column(db.String)
 
 def to_dict(self):
     return {
@@ -18,7 +18,7 @@ def to_dict(self):
         "current_price": self.current_price,
         "environment_score": self.environment_score,
         "social_score": self.social_score,
-        "government_score": self.government_score,
+        "governance_score": self.governance_score,
     }
 
 def from_dict(cls, request_body):
@@ -29,5 +29,5 @@ def from_dict(cls, request_body):
         current_stock_price=request_body["current_stock_price"],
         environment_score=request_body["environment_score"],
         social_score=request_body["social_score"],
-        government_score=request_body["government_score"]
+        governance_score=request_body["governance_score"]
     )
