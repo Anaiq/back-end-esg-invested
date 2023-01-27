@@ -22,7 +22,7 @@ def create_app(test_config=None):
         app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLALCHEMY_TEST_DATABASE_URI")
 
     # import models here
-    from app.models.user import User
+    from app.models.investor import Investor
     from app.models.transaction import Transaction
     from app.models.stock import Stock
     from app.models.exchange import Exchange
@@ -32,8 +32,8 @@ def create_app(test_config=None):
     migrate.init_app(app, db)
 
     # register Blueprints here
-    from .routes import user_bp
-    app.register_blueprint(user_bp)
+    from .routes import investor_bp
+    app.register_blueprint(investor_bp)
 
     from .routes import transaction_bp
     app.register_blueprint(transaction_bp)

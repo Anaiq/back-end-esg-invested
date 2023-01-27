@@ -1,6 +1,6 @@
 import pytest
 from app import create_app
-from app.models.user import User
+from app.models.investor import Investor
 from app.models.transaction import Transaction
 from app.models.stock import Stock
 from app import db
@@ -24,14 +24,14 @@ def client(app):
     return app.test_client()
 
 
-# This fixture creates a user and saves it in the database
+# This fixture creates a investor and saves it in the database
 # @pytest.fixture
-# def one_user(app):
-#     new_user = User(
-#         user_id=1,
-#         username="user1",
-#         password="user1pw",
+# def one_investor(app):
+#     new_investor = investor(
+#         investor_id=1,
+#         investor_name="investor1",
+#         password="investor1pw",
 #         is_logged_in=False
 #     )
-#     db.session.add(new_user)
+#     db.session.add(new_investor)
 #     db.session.commit()
