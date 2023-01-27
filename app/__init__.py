@@ -32,9 +32,17 @@ def create_app(test_config=None):
     migrate.init_app(app, db)
 
     # register Blueprints here
-    # e.g. 
     from .routes import user_bp
     app.register_blueprint(user_bp)
+
+    from .routes import transaction_bp
+    app.register_blueprint(transaction_bp)
+
+    from .routes import stock_bp
+    app.register_blueprint(stock_bp)
+
+    from .routes import exchange_bp
+    app.register_blueprint(exchange_bp)
 
 
     CORS(app)

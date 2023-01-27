@@ -3,25 +3,15 @@ from app import db
 from app.models.user import User
 from app.models.transaction import Transaction
 from app.models.stock import Stock
+from app.models.exchange import Exchange
 import os, requests
 
-class User:
-    def __init__(self, user_id, username, password, is_logged_in):
-        self.user_id = user_id
-        self.username = username
-        self.password = password
-        self.is_logged_in = is_logged_in
-
-
-users = [
-    User(1, "user1", "user1pw", False),
-    User(2, "user2", "user2pw", True),
-    User(3, "user3", "user3pw", True),
-    User(4, "user4", "user4pw", False),
-]
-
 # create blueprint here
-user_bp = Blueprint("User", __name__, url_prefix="/users")
+user_bp = Blueprint("user_bp", __name__, url_prefix="/users")
+transaction_bp = Blueprint("transaction_bp", __name__, url_prefix="/transactions")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+exchange_bp = Blueprint("exchange_bp", __name__, url_prefix="/exchanges")
+
 
 #VALIDATE MODEL
 def validate_model(class_obj,id):
@@ -37,15 +27,20 @@ def validate_model(class_obj,id):
 
 
 # routes go here
-@user_bp.route("", methods=["GET"])
-def get_all_users():
-    users_response = []
-    for user in users:
-        users_response.append({
-            "user_id": user.user_id,
-            "username": user.username,
-            "password": user.password,
-            "is_logged_in": user.is_logged_in
-        })
+# READ ALL EXCHANGE STOCKS/ GET
+@exchange_bp.route("", methods=["GET"])
+def read_all_exchange_stocks():
+    exchanges = Exchange.query.all()
+    
+    exchanges_response = []
 
-    return jsonify(users_response)
+    for exchange in exchanges:
+        exchanges_response.append(exchange.to_dict())
+    return jsonify(exchanges_response), 200
+
+# READ ONE EXCHANGE STOCK/ GET
+@exchange_bp.route("<exchange_id>", methods=["GET"])
+def read_one_exchange_stock(exchange_id):
+    exchange = validate_model(Exchange, exchange_id)
+    
+    return exchange.to_dict()
