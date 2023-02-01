@@ -1,15 +1,9 @@
 from flask import Blueprint, request, jsonify, make_response, abort
 from app import db
-from app.models.investor import Investor
-from app.models.transaction import Transaction
-from app.models.stock import Stock
 from app.models.exchange import Exchange
 import os, requests
 
 # create blueprint here
-investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
-transaction_bp = Blueprint("transaction_bp", __name__, url_prefix="/transactions")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 exchange_bp = Blueprint("exchange_bp", __name__, url_prefix="/exchanges")
 
 

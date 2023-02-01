@@ -32,16 +32,16 @@ def create_app(test_config=None):
     migrate.init_app(app, db)
 
     # register Blueprints here
-    from .routes import investor_bp
+    from .investor_routes import investor_bp
     app.register_blueprint(investor_bp)
 
-    from .routes import transaction_bp
+    from .investor_routes import transaction_bp
     app.register_blueprint(transaction_bp)
 
-    from .routes import stock_bp
+    from .investor_routes import stock_bp
     app.register_blueprint(stock_bp)
 
-    from .routes import exchange_bp
+    from .exchange_routes import exchange_bp
     app.register_blueprint(exchange_bp)
 
 

@@ -48,7 +48,6 @@ class Investor(db.Model):
     @classmethod
     def from_dict(cls, request_body):
         return Investor(
-            investor_id=request_body["investor_id"],
             investor_name=request_body["investor_name"],
             password=request_body["password"],
             is_logged_in=request_body["is_logged_in"],
