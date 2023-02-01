@@ -19,6 +19,7 @@ stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 def register_investor():
     # get response for potentially added new investor
     request_body = request.get_json()
+    print("request body:", request_body)
 
     if "investor_name" not in request_body:
         return make_response({"Details": "User name and password required"}, 400)
@@ -27,11 +28,11 @@ def register_investor():
     investors = Investor.query.all()
     print("investors: ", investors)
 
-    # check if investor in db:
     for investor in investors:
+        # check if investor in db:
         if request_body["investor_name"]== investor.to_dict()["investor_name"]:
             # if investor in database already:
-            return make_response({"Details": "User name and password already taken."}, 400)
+            return make_response({"Details": "User name and password already taken."}, 409)
     
     # if not add investor to db
     request_body = request.get_json()
@@ -43,8 +44,24 @@ def register_investor():
 
     return make_response(response_body, 201)
 
-# login page: 
-    # get one investor
+
+    # GET ONE INVESTOR
+@investor_bp.route("/<investor_id>", methods=["GET"])
+def get_one_investor_login(investor_id):
+    # get all investors
+    investors = Investor.query.all()
+
+    investor_to_login = validate_model(Investor, investor_id)
+
+    investor_to_login = investor_to_login.to_dict()
+    
+    for investor in investors:
+        # check if investor in db:
+            if investor_to_login["investor_id"] == investor.to_dict()["investor_id"]:
+                return investor_to_login
+
+    return make_response({"Details": "Sorry Username does not have an Investing Account. Please Register for one"}, 400)
+
 
 # portfolio page:
     # 
