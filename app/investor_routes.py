@@ -10,6 +10,16 @@ import os, requests
 # create blueprint here
 investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
 stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+esg_goal_bp = Blueprint("esg_goal_bp", __name__, url_prefix="/esg-goals")
+current_esg_bp = Blueprint("current_esg_bp", __name__, url_prefix="/current-esgs")
+cash_balance_bp = Blueprint("cash_balance_bp", __name__, url_prefix="/cash-balance")
+total_assets_bp = Blueprint("total_assets_bp", __name__, url_prefix="/total-assets")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
+
 
 # register page: 
     # check if investor in db if not, add investor to db
@@ -68,10 +78,13 @@ def get_one_investor_login(investor_id):
     # GET/READ INVESTOR TOTAL ASSETS BALANCE
     # GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
     # GET/READ INVESTOR LIST OF FILTERED TRANSACTIONS
-    # GET/READ INVESTOR ESG GOALS
-    # GET/READ INVESTOR CURRENT ESG
     # POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
     # PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
+    # PATCH/UPDATE INVESTOR TOTAL ASSETS BALANCE
+    # PATCH/UPDATE INVESTOR TOTAL SHARES CASH VALUE
+    # PATCH/UPDATE INVESTOR ESG GOALS
+    # PATCH/UPDATE INVESTOR CURRENT ESG RATINGS
+
     
 
 
