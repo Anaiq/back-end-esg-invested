@@ -32,7 +32,6 @@ class Transaction(db.Model):
     @classmethod
     def from_dict(cls, request_body):
         return Transaction(
-            transaction_id=request_body["transaction_id"],
             stock_symbol=request_body["stock_symbol"],
             company_name=request_body["company_name"],
             current_stock_price=request_body["current_stock_price"],

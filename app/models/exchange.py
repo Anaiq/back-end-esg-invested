@@ -24,7 +24,6 @@ class Exchange(db.Model):
     #function not needed?? confirm
     def from_dict(cls, request_body):
         return Exchange(
-            exchange_id=request_body["exchange_id"],
             stock_symbol=request_body["stock_symbol"],
             company_name=request_body["company_name"],
             current_stock_price=request_body["current_stock_price"],

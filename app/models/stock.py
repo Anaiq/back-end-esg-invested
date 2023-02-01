@@ -29,7 +29,6 @@ class Stock(db.Model):
     @classmethod
     def from_dict(cls, request_body):
         return Stock(
-            stock_id=request_body["stock_id"],
             stock_symbol=request_body["stock_symbol"],
             environment_rating=request_body["environment_rating"],
             social_rating=request_body["social_rating"],
