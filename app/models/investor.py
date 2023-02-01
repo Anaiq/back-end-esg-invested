@@ -6,17 +6,17 @@ class Investor(db.Model):
     investor_name = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
     is_logged_in = db.Column(db.Boolean, nullable=False)
-    cash_balance = db.Column(db.Integer)
-    total_shares_buys = db.Column(db.Integer)
-    total_shares_sales = db.Column(db.Integer)
-    total_shares_cash_value = db.Column(db.Integer)
-    total_assets_balance = db.Column(db.Integer)
-    current_e_score = db.Column(db.String)
-    current_s_score = db.Column(db.String)
-    current_g_score = db.Column(db.String)
-    e_goal = db.Column(db.String)
-    s_goal = db.Column(db.String)
-    g_goal = db.Column(db.String)
+    cash_balance = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
+    total_shares_buys = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
+    total_shares_sales = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
+    total_shares_cash_value = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
+    total_assets_balance = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
+    current_e_rating = db.Column(db.String, nullable=False, server_default="")
+    current_s_rating = db.Column(db.String,nullable=False, server_default="")
+    current_g_rating = db.Column(db.String,nullable=False, server_default="")
+    e_goal = db.Column(db.String,nullable=False, server_default="")
+    s_goal = db.Column(db.String,nullable=False, server_default="")
+    g_goal = db.Column(db.String,nullable=False, server_default="")
     transactions = db.relationship("Transaction", back_populates="investor", lazy=True)
 
 
@@ -35,9 +35,9 @@ class Investor(db.Model):
             "total_shares_sales": self.total_shares_sales,
             "total_shares_cash_value": self.total_shares_cash_value,
             "total_assets_balance": self.total_assets_balance,
-            "current_e_score": self.current_e_score,
-            "current_s_score": self.current_s_score,
-            "current_g_score": self.current_g_score,
+            "current_e_rating": self.current_e_rating,
+            "current_s_rating": self.current_s_rating,
+            "current_g_rating": self.current_g_rating,
             "e_goal": self.e_goal,
             "s_goal": self.s_goal,
             "g_goal": self.g_goal,
@@ -57,9 +57,9 @@ class Investor(db.Model):
             total_shares_sales=request_body["total_shares_sales"],
             total_shares_cash_value=request_body["total_shares_cash_value"],
             total_assets_balance=request_body["total_assets_balance"],
-            current_e_score=request_body["current_e_score"],
-            current_s_score=request_body["current_s_score"],
-            current_g_score=request_body["current_g_score"],
+            current_e_rating=request_body["current_e_rating"],
+            current_s_rating=request_body["current_s_rating"],
+            current_g_rating=request_body["current_g_rating"],
             e_goal=request_body["e_goal"],
             s_goal=request_body["s_goal"],
             g_goal=request_body["g_goal"],

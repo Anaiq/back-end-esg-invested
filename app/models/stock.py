@@ -5,9 +5,9 @@ from app import db
 class Stock(db.Model):
     stock_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     stock_symbol = db.Column(db.String)
-    environment_score = db.Column(db.String)
-    social_score = db.Column(db.String)
-    governance_score = db.Column(db.String)
+    environment_rating = db.Column(db.String)
+    social_rating = db.Column(db.String)
+    governance_rating = db.Column(db.String)
     transactions = db.relationship("Transaction", back_populates="stock", lazy=True)
 
 
@@ -19,9 +19,9 @@ class Stock(db.Model):
         return {
             "stock_id": self.stock_id,
             "stock_symbol": self.stock_symbol,
-            "environment_score": self.environment_score,
-            "social_score": self.social_score,
-            "governance_score": self.governance_score,
+            "environment_rating": self.environment_rating,
+            "social_rating": self.social_rating,
+            "governance_rating": self.governance_rating,
             "transactions": transactions_list
         }
 
@@ -31,7 +31,7 @@ class Stock(db.Model):
         return Stock(
             stock_id=request_body["stock_id"],
             stock_symbol=request_body["stock_symbol"],
-            environment_score=request_body["environment_score"],
-            social_score=request_body["social_score"],
-            governance_score=request_body["governance_score"],
+            environment_rating=request_body["environment_rating"],
+            social_rating=request_body["social_rating"],
+            governance_rating=request_body["governance_rating"],
         )

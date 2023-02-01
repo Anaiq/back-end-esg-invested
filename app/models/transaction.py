@@ -11,7 +11,7 @@ class Transaction(db.Model):
     transaction_type = db.Column(db.String)
     transaction_time = db.Column(db.DateTime)
     investor_id = db.Column(db.Integer, db.ForeignKey("investor.investor_id"))
-    investor = db.relationship("investor", back_populates="transactions")
+    investor = db.relationship("Investor", back_populates="transactions")
     stock_id = db.Column(db.Integer, db.ForeignKey("stock.stock_id"))
     stock = db.relationship("Stock", back_populates="transactions")
 
