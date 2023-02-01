@@ -15,7 +15,7 @@ def validate_model(class_obj,id):
         abort(make_response({"message":f"{id} is an invalid id"}, 400))
     query_result = class_obj.query.get(id)
     if not query_result:
-        abort(make_response({"message":f"{id} not found"}, 404))
+        abort(make_response({"message":f"Sorry, Not found"}, 404))
 
     return query_result
 
