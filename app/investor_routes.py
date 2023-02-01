@@ -9,7 +9,6 @@ import os, requests
 
 # create blueprint here
 investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
-transaction_bp = Blueprint("transaction_bp", __name__, url_prefix="/transactions")
 stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 
 # register page: 
@@ -62,8 +61,18 @@ def get_one_investor_login(investor_id):
 
     return make_response({"Details": "Sorry Username does not have an Investing Account. Please Register for one"}, 400)
 
+    # GET INVESTOR ESG GOALS
+    # GET INVESTOR CURRENT ESG RATINGS
+    # GET/READ INVESTOR CASH BALANCE
+    # GET/READ INVESTOR TOTAL CASH VALUE 
+    # GET/READ INVESTOR TOTAL ASSETS BALANCE
+    # GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
+    # GET/READ INVESTOR LIST OF FILTERED TRANSACTIONS
+    # GET/READ INVESTOR ESG GOALS
+    # GET/READ INVESTOR CURRENT ESG
+    # POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
+    # PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
+    
 
-# portfolio page:
-    # 
 
 

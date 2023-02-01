@@ -35,7 +35,7 @@ def create_app(test_config=None):
     from .investor_routes import investor_bp
     app.register_blueprint(investor_bp)
 
-    from .investor_routes import transaction_bp
+    from .transaction_routes import transaction_bp
     app.register_blueprint(transaction_bp)
 
     from .investor_routes import stock_bp
