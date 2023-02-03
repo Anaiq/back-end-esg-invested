@@ -10,6 +10,8 @@ import os, requests
 # create  blueprint here
 transaction_bp = Blueprint("transaction_bp", __name__, url_prefix="/transactions")
 
+
+
 # send a request to delete a transaction from a particular investor's in the database
 @transaction_bp.route("/<transaction_id>", methods=["DELETE"])
 def delete_transaction(transaction_id):

@@ -10,15 +10,6 @@ import os, requests
 # create blueprint here
 investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
 stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
-esg_goal_bp = Blueprint("esg_goal_bp", __name__, url_prefix="/esg-goals")
-current_esg_bp = Blueprint("current_esg_bp", __name__, url_prefix="/current-esgs")
-cash_balance_bp = Blueprint("cash_balance_bp", __name__, url_prefix="/cash-balance")
-total_assets_bp = Blueprint("total_assets_bp", __name__, url_prefix="/total-assets")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 
 
 # register page: 
@@ -71,21 +62,101 @@ def get_one_investor_login(investor_id):
 
     return make_response({"Details": "Sorry Username does not have an Investing Account. Please Register for one"}, 400)
 
-    # GET INVESTOR ESG GOALS
-    # GET INVESTOR CURRENT ESG RATINGS
-    # GET/READ INVESTOR CASH BALANCE
-    # GET/READ INVESTOR TOTAL CASH VALUE 
-    # GET/READ INVESTOR TOTAL ASSETS BALANCE
-    # GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
-    # GET/READ INVESTOR LIST OF FILTERED TRANSACTIONS
-    # POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
-    # PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
-    # PATCH/UPDATE INVESTOR TOTAL ASSETS BALANCE
-    # PATCH/UPDATE INVESTOR TOTAL SHARES CASH VALUE
-    # PATCH/UPDATE INVESTOR ESG GOALS
-    # PATCH/UPDATE INVESTOR CURRENT ESG RATINGS
+# GET INVESTOR ESG GOALS
+@investor_bp.route("/<investor_id>/esg-goals", methods=["GET"])
+def get_investor_esg_goals(investor_id):
+    investor = validate_model(Investor, investor_id)
+
+    return make_response({
+        "e_goal": investor.to_dict()["e_goal"],
+        "s_goal": investor.to_dict()["s_goal"],
+        "g_goal": investor.to_dict()["g_goal"],
+    }, 200)
+
+
+
+# GET INVESTOR CURRENT ESG RATINGS
+@investor_bp.route("/<investor_id>/current-esgs", methods=["GET"])
+def get_investor_current_esgs(investor_id):
+    investor = validate_model(Investor, investor_id)
+
+    return {
+        "current_e_rating": investor.to_dict()["current_e_rating"],
+        "current_s_rating": investor.to_dict()["current_s_rating"],
+        "current_g_rating": investor.to_dict()["current_g_rating"],
+    }, 200
 
     
+# GET/READ INVESTOR CASH BALANCE
+@investor_bp.route("/<investor_id>", methods=["GET"])
+def get_investor_cash_balance():
+    ...
+# GET/READ INVESTOR TOTAL CASH VALUE OF SHARES
+@investor_bp.route("/<investor_id>", methods=["GET"])
+def get_investor_total_shares_cash_value():
+    ...
+# GET/READ INVESTOR TOTAL ASSETS BALANCE
+@investor_bp.route("/<investor_id>", methods=["GET"])
+def get_investor_total_assets_balance():
+    ...
+
+# GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
+@investor_bp.route("/<investor_id>", methods=["GET"])
+def get_investor_transactions():
+
+    ...
+# POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
+@investor_bp.route("/<investor_id>/transactions", methods=["POST"])
+def create_transaction_associated_with_investor(investor_id):
+    investor = validate_model(Investor, investor_id)
+    stocks = Stock.query.all()
 
 
+    stock_id = 0
 
+    request_body = request.get_json()
+    for stock in stocks:
+        if stock.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
+            stock_id = stock.to_dict()["stock_id"]
+        print(stock.to_dict())
+    print(request_body)
+
+    new_transaction = Transaction(
+        stock_id=stock_id,
+        investor_id=investor_id,
+        stock_symbol=request_body["stock_symbol"],
+        company_name=request_body["company_name"],
+        current_stock_price=request_body["current_stock_price"],
+        number_stock_shares=request_body["number_stock_shares"],
+        transaction_total_value=request_body["transaction_total_value"],
+        transaction_type=request_body["transaction_type"],
+        transaction_time=request_body["transaction_time"]
+        )
+    
+    db.session.add(new_transaction)
+    db.session.commit()
+
+    return new_transaction.to_dict(), 201
+
+
+# PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
+@investor_bp.route("/<investor_id>", methods=["PATCH"])
+def update_investor_cash_balance():
+    ...
+
+# PATCH/UPDATE INVESTOR TOTAL ASSETS BALANCE
+@investor_bp.route("/<investor_id>", methods=["PATCH"])
+def update_investor_total_assets_balance():
+    ...
+# PATCH/UPDATE INVESTOR TOTAL SHARES CASH VALUE
+@investor_bp.route("/<investor_id>", methods=["PATCH"])
+def update_investor_total_shares_cash_value():
+    ...
+# PATCH/UPDATE INVESTOR ESG GOALS
+@investor_bp.route("/<investor_id>", methods=["PATCH"])
+def update_investor_esg_goals():
+    ...
+# PATCH/UPDATE INVESTOR CURRENT ESG RATINGS
+@investor_bp.route("/<investor_id>", methods=["PATCH"])
+def update_investor_current_esgs():
+    ...

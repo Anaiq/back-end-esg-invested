@@ -25,6 +25,8 @@ class Transaction(db.Model):
         transaction_as_dict["transaction_total_value"] = str(self.transaction_total_value)
         transaction_as_dict["transaction_type"] = self.transaction_type
         transaction_as_dict["transaction_time"] = self.transaction_time
+        transaction_as_dict["investor_id"]=self.investor_id
+        transaction_as_dict["stock_id"]=self.stock_id
 
         return transaction_as_dict
 
