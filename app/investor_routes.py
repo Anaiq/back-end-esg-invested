@@ -8,6 +8,8 @@ from app.exchange_routes import validate_model
 import os, requests
 
 # create blueprint here
+register_bp = Blueprint("register_bp", __name__, url_prefix="/register")
+login_bp = Blueprint("login_bp", __name__, url_prefix="/login")
 investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
 stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 
@@ -15,9 +17,9 @@ stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 # register page: 
     # check if investor in db if not, add investor to db
     # CREATE INVESTOR/POST
-@investor_bp.route("", methods=["POST"])
+@register_bp.route("", methods=["POST"])
 def register_investor():
-    # get response for potentially added new investor
+    # get request_body of potentially added new investor
     request_body = request.get_json()
     print("request body:", request_body)
 
@@ -34,7 +36,7 @@ def register_investor():
             # if investor in database already:
             return make_response({"Details": "User name and password already taken."}, 409)
     
-    # if not add investor to db
+    # if not investor in db
     request_body = request.get_json()
     new_investor = Investor.from_dict(request_body)
 
@@ -44,23 +46,55 @@ def register_investor():
 
     return make_response(response_body, 201)
 
+# create a login endpoint, check if in database and return
+@login_bp.route("", methods=["POST"])
+def login_investor():
+    # get response for potentially added new investor
+    request_body = request.get_json()
+    print("request body:", request_body)
 
-    # GET ONE INVESTOR
+    investors = Investor.query.all()
+
+    for investor in investors:
+        # check if investor in db:
+            if request_body["investor_name"] == investor.to_dict()["investor_name"]:
+                print(f"request_body['investor_name'] {request_body['investor_name']} == investor.to_dict()['investor_name'] {investor.to_dict()['investor_name']}")
+                response_body = investor.to_dict()
+                print(f"response_body: {response_body}")
+                return make_response(response_body, 200)
+    
+    return make_response({"Details": "Sorry Username does not have an Investing Account. Please Register for one"}, 400)
+
+# GET all investors()
+@investor_bp.route("", methods=["GET"])
+def get_all_investor_portfolios():
+    # get all investors
+    investors = Investor.query.all()
+    
+    response = []
+    for investor in investors:
+        response.append(investor.to_dict())
+    return jsonify(response), 200
+    # return response.to_dict()
+
+
+# GET SPECIFIED INVESTOR
 @investor_bp.route("/<investor_id>", methods=["GET"])
-def get_one_investor_login(investor_id):
+def get_one_investor_portfolio(investor_id):
     # get all investors
     investors = Investor.query.all()
 
-    investor_to_login = validate_model(Investor, investor_id)
+    investor = validate_model(Investor, investor_id)
 
-    investor_to_login = investor_to_login.to_dict()
+    one_investor = investor.to_dict()
     
     for investor in investors:
         # check if investor in db:
-            if investor_to_login["investor_id"] == investor.to_dict()["investor_id"]:
-                return investor_to_login
+            if one_investor["investor_id"] == investor.to_dict()["investor_id"]:
+                return investor.to_dict()
 
     return make_response({"Details": "Sorry Username does not have an Investing Account. Please Register for one"}, 400)
+
 
 # GET INVESTOR ESG GOALS
 @investor_bp.route("/<investor_id>/esg-goals", methods=["GET"])
@@ -101,12 +135,19 @@ def get_investor_total_assets_balance():
     ...
 
 # GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
-@investor_bp.route("/<investor_id>", methods=["GET"])
-def get_investor_transactions():
+@investor_bp.route("/<investor_id>/transactions", methods=["GET"])
+def get_investor_transactions(investor_id):
+    investor = validate_model(Investor, investor_id)
 
-    ...
+
+    transactions_response = []
+    for transaction in investor.transactions:
+        transactions_response.append(transaction.to_dict())
+    return jsonify(transactions_response)
+
+
 # POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
-@investor_bp.route("/<investor_id>/transactions", methods=["POST"])
+@investor_bp.route("/<investor_id>/buy", methods=["POST"])
 def create_transaction_associated_with_investor(investor_id):
     investor = validate_model(Investor, investor_id)
     stocks = Stock.query.all()

@@ -13,6 +13,8 @@ load_dotenv()
 
 def create_app(test_config=None):
     app = Flask(__name__)
+    CORS(app) 
+    
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     if not test_config:
@@ -32,6 +34,12 @@ def create_app(test_config=None):
     migrate.init_app(app, db)
 
     # register Blueprints here
+    from .investor_routes import register_bp
+    app. register_blueprint(register_bp) 
+
+    from .investor_routes import login_bp
+    app.register_blueprint(login_bp) 
+
     from .investor_routes import investor_bp
     app.register_blueprint(investor_bp)
 
@@ -44,6 +52,4 @@ def create_app(test_config=None):
     from .exchange_routes import exchange_bp
     app.register_blueprint(exchange_bp)
 
-
-    CORS(app)
     return app
