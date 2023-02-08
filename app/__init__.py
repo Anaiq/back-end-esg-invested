@@ -12,8 +12,7 @@ load_dotenv()
 
 
 def create_app(test_config=None):
-    app = Flask(__name__)
-    CORS(app) 
+    app = Flask(__name__) 
     
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -52,4 +51,6 @@ def create_app(test_config=None):
     from .exchange_routes import exchange_bp
     app.register_blueprint(exchange_bp)
 
+    app.config["CORS_HEADERS"] = "Content-Type"
+    CORS(app)
     return app

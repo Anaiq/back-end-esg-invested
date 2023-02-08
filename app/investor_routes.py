@@ -121,18 +121,6 @@ def get_investor_current_esgs(investor_id):
     }, 200
 
     
-# GET/READ INVESTOR CASH BALANCE
-@investor_bp.route("/<investor_id>", methods=["GET"])
-def get_investor_cash_balance():
-    ...
-# GET/READ INVESTOR TOTAL CASH VALUE OF SHARES
-@investor_bp.route("/<investor_id>", methods=["GET"])
-def get_investor_total_shares_cash_value():
-    ...
-# GET/READ INVESTOR TOTAL ASSETS BALANCE
-@investor_bp.route("/<investor_id>", methods=["GET"])
-def get_investor_total_assets_balance():
-    ...
 
 # GET/READ INVESTOR LIST OF TRANSACTIONS TO VIEW IN TABLE
 @investor_bp.route("/<investor_id>/transactions", methods=["GET"])
@@ -173,6 +161,10 @@ def create_transaction_associated_with_investor(investor_id):
         transaction_type=request_body["transaction_type"],
         transaction_time=request_body["transaction_time"]
         )
+    new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * int(request_body["current_stock_price"])
+    
+    investor.total_shares_cash_value = new_transaction.transaction_total_value
+    investor.total_assets_balance = investor.cash_balance + investor.total_shares_cash_value
     
     db.session.add(new_transaction)
     db.session.commit()
@@ -181,9 +173,21 @@ def create_transaction_associated_with_investor(investor_id):
 
 
 # PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
-@investor_bp.route("/<investor_id>", methods=["PATCH"])
-def update_investor_cash_balance():
-    ...
+@investor_bp.route("/<investor_id>/add_money", methods=["PATCH"])
+def update_investor_cash_balance(investor_id):
+    investor = validate_model(Investor, investor_id)
+
+    request_body = request.get_json()
+
+    investor.cash_balance = investor.cash_balance + request_body["cash"]
+    investor.total_assets_balance = investor.total_assets_balance + investor.cash_balance + investor.total_shares_cash_value
+    
+    db.session.commit()
+    response_body = investor.to_dict()
+
+    return make_response(response_body, 200)
+
+    
 
 # PATCH/UPDATE INVESTOR TOTAL ASSETS BALANCE
 @investor_bp.route("/<investor_id>", methods=["PATCH"])
