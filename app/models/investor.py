@@ -4,8 +4,6 @@ from app import db
 class Investor(db.Model):
     investor_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     investor_name = db.Column(db.String, nullable=False)
-    password = db.Column(db.String, nullable=False)
-    is_logged_in = db.Column(db.Boolean, nullable=False)
     cash_balance = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
     total_shares_buys = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
     total_shares_sales = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
@@ -28,8 +26,6 @@ class Investor(db.Model):
         return {
             "investor_id": self.investor_id,
             "investor_name": self.investor_name,
-            "password": self.password,
-            "is_logged_in": self.is_logged_in,
             "cash_balance": self.cash_balance,
             "total_shares_buys": self.total_shares_buys,
             "total_shares_sales": self.total_shares_sales,
@@ -49,8 +45,6 @@ class Investor(db.Model):
     def from_dict(cls, request_body):
         return Investor(
             investor_name=request_body["investor_name"],
-            password=request_body["password"],
-            is_logged_in=request_body["is_logged_in"],
             cash_balance=request_body["cash_balance"],
             total_shares_buys=request_body["total_shares_buys"],
             total_shares_sales=request_body["total_shares_sales"],

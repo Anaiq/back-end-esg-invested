@@ -1,8 +1,8 @@
 """created Investor, Stock, Transaction, Exchange models
 
-Revision ID: f1e5cd3ff662
+Revision ID: 1e56f73113e9
 Revises: 
-Create Date: 2023-01-31 20:12:47.321162
+Create Date: 2023-02-08 11:07:34.278719
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f1e5cd3ff662'
+revision = '1e56f73113e9'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -31,8 +31,6 @@ def upgrade():
     op.create_table('investor',
     sa.Column('investor_id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('investor_name', sa.String(), nullable=False),
-    sa.Column('password', sa.String(), nullable=False),
-    sa.Column('is_logged_in', sa.Boolean(), nullable=False),
     sa.Column('cash_balance', sa.Integer(), server_default=sa.text('0'), nullable=False),
     sa.Column('total_shares_buys', sa.Integer(), server_default=sa.text('0'), nullable=False),
     sa.Column('total_shares_sales', sa.Integer(), server_default=sa.text('0'), nullable=False),
