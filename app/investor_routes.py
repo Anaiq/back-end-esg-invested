@@ -6,6 +6,7 @@ from app.models.stock import Stock
 from app.models.exchange import Exchange
 from app.exchange_routes import validate_model
 import os, requests
+import datetime
 
 # create blueprint here
 register_bp = Blueprint("register_bp", __name__, url_prefix="/register")
@@ -138,6 +139,7 @@ def get_investor_transactions(investor_id):
 def create_buy_transaction_associated_with_investor(investor_id):
     investor = validate_model(Investor, investor_id)
     stocks = Stock.query.all()
+    exchanges= Exchange.query.all()
 
 
     stock_id = 0
@@ -149,18 +151,22 @@ def create_buy_transaction_associated_with_investor(investor_id):
         print(stock.to_dict())
     print(request_body)
 
+    for exchange in exchanges:
+        if exchange.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
+            company_name = exchange.to_dict()["company_name"] 
+
     new_transaction = Transaction(
         stock_id=stock_id,
         investor_id=investor_id,
         stock_symbol=request_body["stock_symbol"],
-        company_name=request_body["company_name"],
+        company_name=company_name,
         current_stock_price=request_body["current_stock_price"],
         number_stock_shares=request_body["number_stock_shares"],
-        transaction_total_value=request_body["transaction_total_value"],
-        transaction_type=request_body["transaction_type"],
-        transaction_time=request_body["transaction_time"]
+        transaction_total_value= int(request_body["number_stock_shares"]) * (request_body["current_stock_price"] * 100),
+        transaction_type=request_body["transaction_type"],  
+        transaction_time=datetime.datetime.now()
         )
-    new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * int(request_body["current_stock_price"])
+    # new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * (request_body["current_stock_price"] * 100)
     
     # investor.total_shares_cash_value = new_transaction.transaction_total_value
     investor.cash_balance -= new_transaction.transaction_total_value 
