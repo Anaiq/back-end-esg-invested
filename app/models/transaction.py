@@ -27,6 +27,11 @@ class Transaction(db.Model):
         transaction_as_dict["transaction_time"] = self.transaction_time
         transaction_as_dict["investor_id"]=self.investor_id
         transaction_as_dict["stock_id"]=self.stock_id
+        transaction_as_dict["stock"]=self.stock_id
+        transaction_as_dict["environment_rating"]= self.stock.environment_rating
+        transaction_as_dict["social_rating"]= self.stock.social_rating
+        transaction_as_dict["governance_rating"]=self.stock.governance_rating
+
 
         return transaction_as_dict
 

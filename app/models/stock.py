@@ -12,9 +12,9 @@ class Stock(db.Model):
 
 
     def to_dict(self):
-        transactions_list = []
-        for transaction in self.transactions:
-            transactions_list.append(transaction.to_dict())
+        # transactions_list = []
+        # for transaction in self.transactions:
+        #     transactions_list.append(transaction.to_dict())
 
         return {
             "stock_id": self.stock_id,
@@ -22,7 +22,7 @@ class Stock(db.Model):
             "environment_rating": self.environment_rating,
             "social_rating": self.social_rating,
             "governance_rating": self.governance_rating,
-            "transactions": transactions_list
+            # "transactions": transactions_list
         }
 
         

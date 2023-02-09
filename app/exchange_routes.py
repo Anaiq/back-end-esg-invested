@@ -20,7 +20,6 @@ def validate_model(class_obj,id):
     return query_result
 
 
-# routes go here
 # READ ALL EXCHANGE STOCKS/ GET
 @exchange_bp.route("", methods=["GET"])
 def read_all_exchange_stocks():

@@ -11,7 +11,6 @@ import os, requests
 register_bp = Blueprint("register_bp", __name__, url_prefix="/register")
 login_bp = Blueprint("login_bp", __name__, url_prefix="/login")
 investor_bp = Blueprint("investor_bp", __name__, url_prefix="/investors")
-stock_bp = Blueprint("stock_bp", __name__, url_prefix="/stocks")
 
 
 # register page: 
@@ -134,9 +133,9 @@ def get_investor_transactions(investor_id):
     return jsonify(transactions_response)
 
 
-# POST/ ADD A TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
+# POST/ ADD A BUY TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
 @investor_bp.route("/<investor_id>/buy", methods=["POST"])
-def create_transaction_associated_with_investor(investor_id):
+def create_buy_transaction_associated_with_investor(investor_id):
     investor = validate_model(Investor, investor_id)
     stocks = Stock.query.all()
 
@@ -163,11 +162,57 @@ def create_transaction_associated_with_investor(investor_id):
         )
     new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * int(request_body["current_stock_price"])
     
-    investor.total_shares_cash_value = new_transaction.transaction_total_value
+    # investor.total_shares_cash_value = new_transaction.transaction_total_value
+    investor.cash_balance -= new_transaction.transaction_total_value 
+    investor.total_shares_cash_value += new_transaction.transaction_total_value 
     investor.total_assets_balance = investor.cash_balance + investor.total_shares_cash_value
     
     db.session.add(new_transaction)
     db.session.commit()
+
+    response_body = investor.to_dict()
+
+    # return new_transaction.to_dict(), 201
+    return make_response(response_body, 200)
+
+    
+
+# POST/ ADD A SELL TRANSACTION TO INVESTORS LIST OF TRANSACTIONS
+@investor_bp.route("/<investor_id>/sell", methods=["POST"])
+def create_sell_transaction_associated_with_investor(investor_id):
+    investor = validate_model(Investor, investor_id)
+    stocks = Stock.query.all()
+
+
+    stock_id = 0
+
+    request_body = request.get_json()
+    for stock in stocks:
+        if stock.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
+            stock_id = stock.to_dict()["stock_id"]
+        print(stock.to_dict())
+    print(request_body)
+
+    new_transaction = Transaction(
+        stock_id=stock_id,
+        investor_id=investor_id,
+        stock_symbol=request_body["stock_symbol"],
+        company_name=request_body["company_name"],
+        current_stock_price=request_body["current_stock_price"],
+        number_stock_shares=request_body["number_stock_shares"],
+        transaction_total_value=request_body["transaction_total_value"],
+        transaction_type=request_body["transaction_type"],
+        transaction_time=request_body["transaction_time"]
+        )
+    new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * int(request_body["current_stock_price"])
+    
+    investor.cash_balance += new_transaction.transaction_total_value 
+    investor.total_shares_cash_value -= new_transaction.transaction_total_value 
+    investor.total_assets_balance = investor.cash_balance + investor.total_shares_cash_value
+    
+    db.session.add(new_transaction)
+    db.session.commit()
+
 
     return new_transaction.to_dict(), 201
 
@@ -179,8 +224,8 @@ def update_investor_cash_balance(investor_id):
 
     request_body = request.get_json()
 
-    investor.cash_balance = investor.cash_balance + request_body["cash"]
-    investor.total_assets_balance = investor.total_assets_balance + investor.cash_balance + investor.total_shares_cash_value
+    investor.cash_balance +=  request_body["cash"]
+    investor.total_assets_balance =  investor.cash_balance + investor.total_shares_cash_value
     
     db.session.commit()
     response_body = investor.to_dict()
@@ -189,14 +234,7 @@ def update_investor_cash_balance(investor_id):
 
     
 
-# PATCH/UPDATE INVESTOR TOTAL ASSETS BALANCE
-@investor_bp.route("/<investor_id>", methods=["PATCH"])
-def update_investor_total_assets_balance():
-    ...
-# PATCH/UPDATE INVESTOR TOTAL SHARES CASH VALUE
-@investor_bp.route("/<investor_id>", methods=["PATCH"])
-def update_investor_total_shares_cash_value():
-    ...
+
 # PATCH/UPDATE INVESTOR ESG GOALS
 @investor_bp.route("/<investor_id>", methods=["PATCH"])
 def update_investor_esg_goals():
