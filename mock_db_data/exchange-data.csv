@@ -1,0 +1,496 @@
+stock_Symbol,company_name,current_stock_price ,environment_rating,social_rating,governance_rating
+AAPL,Apple Inc.,141.55,BB,B,B
+MSFT,Microsoft Corporation,239.89,AA,BBB,BB
+AMZN,Amazon.com Inc.,96.83,AA,BB,BBB
+GOOGL,Alphabet Inc. Class A,95.00,BB,BB,BB
+BRK_B,Berkshire Hathaway Inc. Class B,311.50,B,B,B
+GOOG,Alphabet Inc. Class C,96.54,B,BB,BB
+NVDA,NVIDIA Corporation,192.86,BB,BB,B
+XOM,Exxon Mobil Corporation,113.93,A,BB,BB
+UNH,UnitedHealth Group Incorporated,492.00,A,BB,BB
+JNJ,Johnson & Johnson,169.46,A,BB,BB
+JPM,JPMorgan Chase & Co.,138.92,A,BB,BB
+TSLA,Tesla Inc,144.00,A,CCC,B
+V,Visa Inc. Class A,224.90,A,BB,BB
+PG,Procter & Gamble Company,141.73,A,BB,BB
+HD,Home Depot Inc.,317.24,B,B,B
+MA,Mastercard Incorporated Class A,382.23,B,B,B
+META,Meta Platforms Inc. Class A,141.24,B,B,B
+CVX,Chevron Corporation,183.88,CC,B,B
+MRK,Merck & Co. Inc.,108.58,A,BB,BB
+LLY,Eli Lilly and Company,349.40,A,BB,BB
+ABBV,AbbVie Inc.,147.79,A,BB,BB
+PFE,Pfizer Inc.,45.07,A,BB,BB
+BAC,Bank of America Corp,34.83,B,BB,B
+AVGO,Broadcom Inc.,585.17,B,B,B
+KO,Coca-Cola Company,60.87,A,BB,BB
+PEP,PepsiCo Inc.,171.92,AA,BB,BB
+TMO,Thermo Fisher Scientific Inc.,575.00,A,BB,B
+COST,Costco Wholesale Corporation,489.36,A,BB,B
+WMT,Walmart Inc.,142.34,B,B,B
+MCD,McDonald's Corporation,272.04,A,BB,BB
+CSCO,Cisco Systems Inc.,47.96,BB,B,B
+ABT,Abbott Laboratories,111.30,A,BB,BB
+DIS,Walt Disney Company,107.91,A,BB,BB
+DHR,Danaher Corporation,263.40,A,BB,BB
+ACN,Accenture Plc Class A,273.99,A,BBB,BB
+CMCSA,Comcast Corporation Class A,40.40,A,BB,BB
+VZ,Verizon Communications Inc.,40.30,B,B,B
+WFC,Wells Fargo & Company,45.33,AA,BB,BB
+ADBE,Adobe Incorporated,356.99,B,B,B
+NEE,NextEra Energy Inc.,76.59,A,BB,BB
+LIN,Linde plc,324.61,CC,B,B
+NFLX,Netflix Inc.,367.80,B,BB,B
+TXN,Texas Instruments Incorporated,174.75,A,BB,BB
+NKE,NIKE Inc. Class B,126.00,B,B,B
+PM,Philip Morris International Inc.,103.42,A,BB,BB
+CRM,Salesforce Inc.,155.30,BB,B,B
+BMY,Bristol-Myers Squibb Company,73.17,A,BB,BB
+COP,ConocoPhillips,120.37,BBB,BB,BB
+RTX,Raytheon Technologies Corporation,100.01,A,BB,BB
+QCOM,QUALCOMM Incorporated,130.80,BBB,BB,BB
+HON,Honeywell International Inc.,206.67,A,BB,BB
+AMGN,Amgen Inc.,256.80,A,BB,BB
+ORCL,Oracle Corporation,89.64,A,BB,BB
+T,AT&T Inc.,20.40,B,B,BB
+CAT,Caterpillar Inc.,258.14,BB,B,BB
+UPS,United Parcel Service Inc. Class B,176.65,A,BB,B
+LOW,Lowe's Companies Inc.,206.11,B,B,B
+IBM,International Business Machines Corporation,140.45,B,B,B
+MS,Morgan Stanley,95.53,AA,BB,BB
+UNP,Union Pacific Corporation,200.09,B,B,B
+INTC,Intel Corporation,29.64,BB,BBB,A
+SPGI,S&P Global Inc.,366.38,A,BB,BB
+SBUX,Starbucks Corporation,106.78,A,BB,BB
+SCHW,Charles Schwab Corp,79.21,A,BB,BB
+AMD,Advanced Micro Devices Inc.,74.78,B,B,B
+BA,Boeing Company,212.36,B,B,B
+GS,Goldman Sachs Group Inc.,349.63,A,BB,BB
+PLD,Prologis Inc.,125.45,A,BB,BB
+DE,Deere & Company,413.64,DE,A,BB
+INTU,Intuit Inc.,400.91,INTU,A,BB
+CVS,CVS Health Corporation,85.79,CVS,A,BB
+MDT,Medtronic Plc,81.00,A,BB,BB
+GILD,Gilead Sciences Inc.,83.98,A,BB,BB
+LMT,Lockheed Martin Corporation,453.33,A,BB,BB
+AMT,American Tower Corporation,219.47,A,BB,BB
+C,Citigroup Inc.,51.90,A,BB,BB
+ADP,Automatic Data Processing Inc.,228.00,A,BB,BB
+AMAT,Applied Materials Inc.,112.40,A,BB,BB
+TJX,TJX Companies Inc,80.85,A,BB,BB
+CI,Cigna Corporation,314.66,BBB,BB,BB
+BKNG,Booking Holdings Inc.,2389.97,A,BB,BB
+AXP,American Express Company,156.76,B,B,B
+ISRG,Intuitive Surgical Inc.,243.83,A,BB,B
+PYPL,PayPal Holdings Inc.,79.03,BB,B,B
+NOW,ServiceNow Inc.,424.50,AA,BB,BB
+MDLZ,Mondelez International Inc. Class A,64.94,A,BB,BB
+GE,General Electric Company,80.66,A,BB,BB
+ADI,Analog Devices Inc.,168.32,A,BB,BB
+TMUS,T-Mobile US Inc.,148.57,BB,BB,B
+MMC,Marsh & McLennan Companies Inc.,173.28,A,BB,BB
+SYK,Stryker Corporation,252.95,BBB,BB,BB
+VRTX,Vertex Pharmaceuticals Incorporated,315.28,A,BB,BB
+MO,Altria Group Inc,44.92,A,BB,BB
+SLB,Schlumberger NV,56.34,BBB,BB,BB
+DUK,Duke Energy Corporation,100.90,BBB,BB,BB
+EOG,EOG Resources Inc.,132.50,BBB,B,B
+REGN,Regeneron Pharmaceuticals Inc.,742.47,A,BB,BB
+ZTS,Zoetis Inc. Class A,165.51,A,BB,BB
+PGR,Progressive Corporation,135.47,BBB,BB,B
+TGT,Target Corporation,164.21,A,BB,BB
+SO,Southern Company,67.26,BBB,BB,BB
+BDX,Becton Dickinson and Company,246.78,A,BB,BB
+APD,Air Products and Chemicals Inc.,312.05,AA,BBB,BB
+AON,Aon Plc Class A,322.92,A,BB,BB
+CSX,CSX Corporation,31.00,AA,BB,BB
+MU,Micron Technology Inc.,61.59,A,BB,BB
+EQIX,Equinix Inc.,719.77,A,BB,BB
+LRCX,Lam Research Corporation,474.50,A,BB,BB
+NOC,Northrop Grumman Corp.,463.25,A,BB,BB
+FISV,Fiserv Inc.,104.63,A,BB,BB
+BSX,Boston Scientific Corporation,46.12,A,BB,BB
+MRNA,Moderna Inc.,192.59,A,BB,BB
+ITW,Illinois Tool Works Inc.,228.38,A,BB,BB
+ETN,Eaton Corp. Plc,159.14,A,BB,BB
+TFC,Truist Financial Corporation,48.50,BBB,BB,BB
+PNC,PNC Financial Services Group Inc.,160.40,BBB,BB,BB
+EL,Estee Lauder Companies Inc. Class A,273.94,A,BB,BB
+MMM,3M Company,112.98,A,BB,BB
+FCX,Freeport-McMoRan Inc.,46.60,BBB,BB,BB
+HUM,Humana Inc.,502.00,BBB,BB,BB
+CL,Colgate-Palmolive Company,75.77,A,BB,BB
+CCI,Crown Castle Inc.,144.60,A,BB,BB
+USB,U.S. Bancorp,48.99,BB,BB,BB
+CME,CME Group Inc. Class A,173.38,BBB,B,BB
+MPC,Marathon Petroleum Corporation,130.51,A,BB,BB
+KLAC,KLA Corporation,417.50,A,BB,BB
+NSC,Norfolk Southern Corporation,242.97,BB,BB,BB
+ICE,Intercontinental Exchange Inc.,106.49,A,BB,BB
+SHW,Sherwin-Williams Company,247.09,BB,B,B
+WM,Waste Management Inc.,153.30,AA,BB,B
+PXD,Pioneer Natural Resources Company,235.56,BBB,BB,BB
+VLO,Valero Energy Corporation,143.92,BBB,BB,BB
+HCA,HCA Healthcare Inc,253.64,A,BB,BB
+MCK,McKesson Corporation,375.21,A,BB,BB
+ATVI,Activision Blizzard Inc.,74.59,B,BB,BB
+SNPS,Synopsys Inc.,347.94,A,BB,BB
+DG,Dollar General Corporation,232.31,B,B,B
+EMR,Emerson Electric Co.,89.08,A,BB,BB
+GD,General Dynamics Corporation,227.51,A,BB,BB
+D,Dominion Energy Inc,62.48,BBB,BB,BB
+GM,General Motors Company,36.32,A,BB,B
+PSX,Phillips 66,108.30,BBB,BB,BB
+F,Ford Motor Company,12.76,BB,B,B
+SRE,Sempra Energy,158.98,BBB,BB,BB
+ORLY,O'Reilly Automotive Inc.,802.66,A,BB,BB
+CDNS,Cadence Design Systems Inc.,182.88,A,BB,BB
+MCO,Moody's Corporation,315.73,A,BB,B
+EW,Edwards Lifesciences Corporation,77.69,BB,BB,BB
+AEP,American Electric Power Company Inc.,92.35,A,BB,BB
+MET,MetLife Inc.,71.56,A,BB,BB
+ROP,Roper Technologies Inc.,444.23,A,BB,BB
+APH,Amphenol Corporation Class A,79.36,A,BB,BB
+ADM,Archer-Daniels-Midland Company,85.65,AA,BB,BB
+AIG,American International Group Inc.,63.50,A,BB,BB
+OXY,Occidental Petroleum Corporation,64.67,BBB,BB,BB
+JCI,Johnson Controls International plc,68.10,A,BB,BB
+A,Agilent Technologies Inc.,155.76,A,B,BB
+PSA,Public Storage,291.99,B,B,B
+GIS,General Mills Inc.,77.77,A,BB,BB
+TRV,Travelers Companies Inc.,190.74,A,BB,BB
+MAR,Marriott International Inc. Class A,172.31,B,B,B
+FDX,FedEx Corporation,187.80,BBB,BB,B
+KMB,Kimberly-Clark Corporation,131.52,A,BB,BB
+NXPI,NXP Semiconductors NV,173.97,A,BB,BB
+CTVA,Corteva Inc,62.46,AA,BB,BB
+ADSK,Autodesk Inc.,202.50,AA,BB,BB
+AZO,AutoZone Inc.,2357.81,B,B,B
+FIS,Fidelity National Information Services Inc.,74.30,A,BB,BB
+CMG,Chipotle Mexican Grill Inc.,1560.01,B,B,B
+CNC,Centene Corporation,76.50,A,BB,BB
+MSI,Motorola Solutions Inc.,258.57,A,BB,BB
+HES,Hess Corporation,158.00,BBB,BB,BB
+BIIB,Biogen Inc.,292.20,A,BB,BB
+NEM,Newmont Corporation,55.06,BBB,BB,BB
+CHTR,Charter Communications Inc. Class A,403.75,A,BB,BB
+O,Realty Income Corporation,67.30,A,BB,BB
+IQV,IQVIA Holdings Inc,225.00,A,BB,BB
+MSCI,MSCI Inc. Class A,508.64,A,BB,BB
+DVN,Devon Energy Corporation,64.20,BBB,BB,BB
+AFL,Aflac Incorporated,73.12,A,BB,B
+DOW,Dow Inc.,57.80,B,B,B
+MCHP,Microchip Technology Incorporated,76.26,A,BB,BB
+DXCM,DexCom Inc.,103.91,B,B,B
+AJG,Arthur J. Gallagher & Co.,197.15,A,BB,BB
+EXC,Exelon Corporation,41.42,A,BBB,BB
+ROST,Ross Stores Inc.,120.00,BB,BB,BB
+COF,Capital One Financial Corp,115.92,A,BB,BB
+SPG,Simon Property Group Inc.,124.69,B,B,B
+TT,Trane Technologies plc,173.89,AA,BB,BB
+IDXX,IDEXX Laboratories Inc.,485.18,A,BBB,BB
+NUE,Nucor Corporation,157.48,BBB,BB,B
+PH,Parker-Hannifin Corporation,310.20,BBB,BB,B
+TEL,TE Connectivity Ltd.,123.57,B,B,B
+SYY,Sysco Corporation,79.15,A,BB,BB
+MNST,Monster Beverage Corporation,103.52,A,BB,BB
+PCAR,PACCAR Inc,110.81,A,BB,BB
+HLT,Hilton Worldwide Holdings Inc,142.30,BB,B,B
+WMB,Williams Companies Inc.,31.42,BBB,BB,BB
+PAYX,Paychex Inc.,115.88,A,BB,BB
+ECL,Ecolab Inc.,152.55,A,BB,BB
+CTAS,Cintas Corporation,436.50,A,BB,BB
+DD,DuPont de Nemours Inc.,73.53,AA,BB,B
+XEL,Xcel Energy Inc.,68.60,CC,B,B
+PRU,Prudential Financial Inc.,101.50,B,BB,BB
+LHX,L3Harris Technologies Inc,197.67,A,BB,B
+STZ,Constellation Brands Inc. Class A,228.93,A,BB,BB
+AMP,Ameriprise Financial Inc.,343.01,A,BB,B
+KMI,Kinder Morgan Inc Class P,18.46,A,BB,BB
+CARR,Carrier Global Corp.,43.28,B,B,B
+YUM,Yum! Brands Inc.,129.20,A,BB,BB
+BK,Bank of New York Mellon Corp,49.99,A,BB,BB
+HAL,Halliburton Company,40.03,B,B,B
+TDG,TransDigm Group Incorporated,700.50,A,BB,BB
+WELL,Welltower Inc,73.86,A,BB,BB
+CMI,Cummins Inc.,244.88,A,BB,BB
+MTD,Mettler-Toledo International Inc.,1531.57,A,BB,B
+ALL,Allstate Corporation,128.62,A,BB,B
+RMD,ResMed Inc.,231.16,BBB,BB,BB
+ILMN,Illumina Inc.,211.04,A,BB,BB
+EA,Electronic Arts Inc.,128.03,BB,BB,B
+ED,Consolidated Edison Inc.,95.05,AA,BBB,BB
+FTNT,Fortinet Inc.,51.72,A,BB,BB
+CTSH,Cognizant Technology Solutions Corporation Class A,64.24,A,BB,BB
+AME,AMETEK Inc.,142.80,A,BB,BB
+VICI,VICI Properties Inc,33.72,A,B,BB
+KEYS,Keysight Technologies Inc,180.20,A,BB,BB
+HSY,Hershey Company,220.99,AA,BB,BB
+CSGP,CoStar Group Inc.,77.37,BB,BB,BB
+STT,State Street Corporation,88.20,A,BB,BB
+ROK,Rockwell Automation Inc.,280.00,B,B,B
+KHC,Kraft Heinz Company,39.92,A,BB,BB
+OKE,ONEOK Inc.,68.27,BBB,BB,BB
+GPN,Global Payments Inc.,111.68,BB,BB,B
+ALB,Albemarle Corporation,271.65,A,BB,BB
+SBAC,SBA Communications Corp. Class A,291.65,B,B,B
+DLTR,Dollar Tree Inc.,149.47,B,B,B
+PPG,PPG Industries Inc.,128.15,B,B,B
+DLR,Digital Realty Trust Inc.,107.19,A,BB,BB
+DHI,D.R. Horton Inc.,95.45,B,B,B
+PEG,Public Service Enterprise Group Inc,60.85,BBB,BB,B
+BKR,Baker Hughes Company Class A,31.00,BBB,BB,BB
+DFS,Discover Financial Services,115.46,BB,BB,BB
+ON,ON Semiconductor Corporation,70.00,A,BB,BB
+ANET,Arista Networks Inc.,121.26,A,BB,BB
+ENPH,Enphase Energy Inc.,209.00,AA,BB,BB
+KDP,Keurig Dr Pepper Inc.,34.96,A,BB,BB
+WEC,WEC Energy Group Inc,92.74,A,BBB,BB
+ODFL,Old Dominion Freight Line Inc.,320.56,BB,BB,B
+KR,Kroger Co.,44.89,A,BB,BB
+APTV,Aptiv PLC,105.77,A,BB,BB
+VRSK,Verisk Analytics Inc,180.42,AA,BB,BB
+IFF,International Flavors & Fragrances Inc.,111.80,A,BB,BB
+FAST,Fastenal Company,49.43,B,BB,B
+AWK,American Water Works Company Inc.,156.03,AA,BBB,BB
+CPRT,Copart Inc.,65.96,B,B,B
+ES,Eversource Energy,79.27,A,BBB,BB
+WTW,Willis Towers Watson Public Limited Company,253.57,A,BB,BB
+URI,United Rentals Inc.,413.00,A,BB,BB
+EFX,Equifax Inc.,222.24,A,BB,BB
+MTB,M&T Bank Corporation,155.89,A,BB,B
+GLW,Corning Inc,35.56,BB,BB,B
+CBRE,CBRE Group Inc. Class A,82.64,B,B,B
+CDW,CDW Corp.,191.17,BB,B,B
+TROW,T. Rowe Price Group,116.64,A,BB,BB
+ZBH,Zimmer Biomet Holdings Inc.,124.90,A,BB,BB
+IT,Gartner Inc.,328.60,A,BB,BB
+ABC,AmerisourceBergen Corporation,163.50,A,BB,BB
+FANG,Diamondback Energy Inc.,147.65,BBB,B,BB
+ULTA,Ulta Beauty Inc.,499.98,B,B,B
+EIX,Edison International,67.53,A,BB,BB
+WBA,Walgreens Boots Alliance Inc.,36.25,A,BB,BB
+HPQ,HP Inc.,28.69,B,B,B
+GWW,W.W. Grainger Inc.,559.85,B,BB,B
+EBAY,eBay Inc.,48.71,A,BB,BB
+PCG,PG&E Corporation,15.99,CCC,B,B
+RSG,Republic Services Inc.,124.28,B,B,B
+LEN,Lennar Corporation Class A,98.90,B,BB,B
+FRC,First Republic Bank,137.72,BB,BB,BB
+HIG,Hartford Financial Services Group Inc.,77.09,A,BB,BB
+DAL,Delta Air Lines Inc.,39.30,A,BB,BB
+AVB,AvalonBay Communities Inc.,173.36,A,BB,BB
+FITB,Fifth Third Bancorp,35.76,BB,BB,B
+WY,Weyerhaeuser Company,32.75,AA,BB,BB
+FTV,Fortive Corp.,66.76,A,BB,BB
+TSCO,Tractor Supply Company,215.00,A,BB,BB
+VMC,Vulcan Materials Company,178.67,BBB,BB,BB
+ACGL,Arch Capital Group Ltd.,64.80,A,BB,BB
+LYB,LyondellBasell Industries NV,92.97,A,BB,BB
+ARE,Alexandria Real Estate Equities Inc.,156.76,A,BB,BB
+GPC,Genuine Parts Company,166.47,A,B,BB
+LH,Laboratory Corporation of America Holdings,253.70,A,BB,BB
+RJF,Raymond James Financial Inc.,118.11,A,BB,BB
+IR,Ingersoll Rand Inc.,55.95,A,BB,BB
+BAX,Baxter International Inc.,45.92,A,BB,BB
+AEE,Ameren Corporation,86.89,BBB,BB,BB
+FE,FirstEnergy Corp.,41.00,BBB,BB,BB
+ANSS,ANSYS Inc.,259.81,A,BB,BB
+LUV,Southwest Airlines Co.,36.73,BB,BB,B
+DTE,DTE Energy Company,113.41,BBB,BB,B
+ETR,Entergy Corporation,107.50,AA,BB,BB
+PPL,PPL Corporation,29.49,BBB,BB,BB
+RF,Regions Financial Corporation,22.90,A,BB,BB
+PWR,Quanta Services Inc.,148.89,A,BB,BB
+MLM,Martin Marietta Materials Inc.,347.42,BBB,BB,BB
+EQR,Equity Residential,62.14,B,B,B
+HBAN,Huntington Bancshares Incorporated,14.75,BBB,BB,BB
+NDAQ,Nasdaq Inc.,58.15,A,BB,BB
+HPE,Hewlett Packard Enterprise Co.,16.13,B,BB,B
+PFG,Principal Financial Group Inc.,90.07,A,BB,BB
+CFG,Citizens Financial Group Inc.,42.75,B,BB,B
+HOLX,Hologic Inc.,81.37,A,BB,BB
+DOV,Dover Corporation,141.85,A,BB,BB
+STE,STERIS Plc,205.00,A,BB,BB
+VTR,Ventas Inc.,50.81,A,BB,BB
+EXR,Extra Space Storage Inc.,152.00,A,B,B
+VRSN,VeriSign Inc.,214.95,A,BB,BB
+CHD,Church & Dwight Co. Inc.,82.40,A,BB,BB
+CTRA,Coterra Energy Inc.,25.10,BBB,B,BB
+WAT,Waters Corporation,334.36,B,B,B
+MKC,McCormick & Company Incorporated,78.80,A,BB,BB
+CAH,Cardinal Health Inc.,75.42,A,BB,BB
+NTRS,Northern Trust Corporation,94.35,BBB,BB,BB
+WAB,Westinghouse Air Brake Technologies Corporation,103.71,AA,BB,BB
+TSN,Tyson Foods Inc. Class A,65.47,A,B,B
+EPAM,EPAM Systems Inc.,329.04,A,BB,BB
+TDY,Teledyne Technologies Incorporated,429.50,A,BB,BB
+WST,West Pharmaceutical Services Inc.,259.04,A,BB,BB
+CNP,CenterPoint Energy Inc.,30.04,BBB,BB,B
+MPWR,Monolithic Power Systems Inc.,424.69,BB,B,B
+INVH,Invitation Homes Inc.,32.08,A,BB,BB
+XYL,Xylem Inc.,102.57,BBB,BB,B
+MAA,Mid-America Apartment Communities Inc.,162.66,BBB,BB,BB
+ALGN,Align Technology Inc.,252.08,B,B,B
+LVS,Las Vegas Sands Corp.,55.22,A,BB,BB
+STLD,Steel Dynamics Inc.,111.87,BBB,B,BB
+BALL,Ball Corporation,56.64,A,BB,BB
+DRI,Darden Restaurants Inc.,147.78,A,BB,BB
+AES,AES Corporation,27.01,AA,BBB,BB
+CMS,CMS Energy Corporation,62.15,BB,A,C
+MRO,Marathon Oil Corporation,27.94,A,BB,BB
+BR,Broadridge Financial Solutions Inc.,148.99,AA,BB,BB
+CAG,Conagra Brands Inc.,37.14,A,BB,BB
+EXPD,Expeditors International of Washington Inc.,108.14,A,BB,BB
+AMCR,Amcor PLC,11.88,B,B,B
+OMC,Omnicom Group Inc,86.76,A,BB,BB
+IEX,IDEX Corporation,232.80,A,BB,B
+TTWO,Take-Two Interactive Software Inc.,110.55,B,BB,BB
+K,Kellogg Company,67.83,A,BB,BB
+MOH,Molina Healthcare Inc.,297.22,B,BB,B
+EXPE,Expedia Group Inc.,116.44,B,BB,BB
+SWKS,Skyworks Solutions Inc.,109.42,A,BB,BB
+ETSY,Etsy Inc.,135.84,BBB,B,B
+CLX,Clorox Company,141.55,AA,BB,BB
+FSLR,First Solar Inc.,166.80,AA,BB,BB
+SEDG,SolarEdge Technologies Inc.,300.52,A,BB,BB
+TRGP,Targa Resources Corp.,75.31,BBB,BB,BB
+CF,CF Industries Holdings Inc.,83.76,AA,BB,BB
+PKI,PerkinElmer Inc.,135.08,A,BB,BB
+BBY,Best Buy Co. Inc.,84.00,BBB,B,BB
+CINF,Cincinnati Financial Corporation,105.17,B,B,B
+DGX,Quest Diagnostics Incorporated,144.91,B,BB,B
+SIVB,SVB Financial Group,296.00,A,BB,BB
+COO,Cooper Companies Inc.,343.58,A,BB,BB
+MOS,Mosaic Company,48.03,A,BB,BB
+KEY,KeyCorp,18.33,A,BB,BB
+FMC,FMC Corporation,128.88,A,BB,BB
+UAL,United Airlines Holdings Inc.,50.25,BB,BB,B
+TER,Teradyne Inc.,103.65,A,BB,BB
+ZBRA,Zebra Technologies Corporation Class A,310.57,BB,BB,BB
+SJM,J.M. Smucker Company,152.05,A,BB,BB
+SYF,Synchrony Financial,37.10,BB,BB,BB
+JBHT,J.B. Hunt Transport Services Inc.,187.29,A,BB,BB
+ATO,Atmos Energy Corporation,115.14,BBB,BB,BB
+FDS,FactSet Research Systems Inc.,413.84,AA,BB,BB
+J,Jacobs Solutions Inc.,121.16,B,B,BB
+PAYC,Paycom Software Inc.,314.60,A,BB,BB
+AVY,Avery Dennison Corporation,185.30,A,BB,BB
+INCY,Incyte Corporation,84.89,A,BB,BB
+NVR,NVR Inc.,5069.06,B,B,B
+GRMN,Garmin Ltd.,98.04,B,B,B
+IRM,Iron Mountain Inc.,52.54,A,BB,BB
+LKQ,LKQ Corporation,57.60,A,BB,BB
+FLT,FLEETCOR Technologies Inc.,200.30,A,BB,BB
+NTAP,NetApp Inc.,66.50,A,BB,BB
+TXT,Textron Inc.,70.15,A,BB,BB
+HWM,Howmet Aerospace Inc.,39.61,A,BB,BB
+PEAK,Healthpeak Properties Inc.,27.08,A,BB,BB
+POOL,Pool Corporation,363.50,A,BB,BB
+WRB,W. R. Berkley Corporation,71.42,A,BB,BB
+APA,APA Corp.,44.19,BBB,BB,BB
+MTCH,Match Group Inc.,50.65,B,BB,B
+IPG,Interpublic Group of Companies Inc.,36.31,A,BB,BB
+ESS,Essex Property Trust Inc.,215.45,BBB,B,B
+PTC,PTC Inc.,133.85,A,BB,BB
+TRMB,Trimble Inc.,56.57,A,BB,BB
+RCL,Royal Caribbean Group,63.56,A,BB,BB
+AKAM,Akamai Technologies Inc.,86.62,AA,BB,BB
+LW,Lamb Weston Holdings Inc.,97.76,A,B,BB
+EVRG,Evergy Inc.,61.93,BBB,BB,BB
+VTRS,Viatris Inc.,11.64,A,BB,BB
+BRO,Brown & Brown Inc.,58.96,BBB,BB,BB
+RE,Everest Re Group Ltd.,352.64,A,BB,BB
+LNT,Alliant Energy Corp,53.73,BBB,BB,BB
+KIM,Kimco Realty Corporation,21.00,A,BB,BB
+TYL,Tyler Technologies Inc.,318.15,A,BB,BB
+IP,International Paper Company,36.01,A,BB,BB
+LDOS,Leidos Holdings Inc.,98.15,A,BB,BB
+MGM,MGM Resorts International,40.28,A,BB,BB
+NDSN,Nordson Corporation,235.02,A,BB,BB
+GEN,Gen Digital Inc.,22.60,A,BB,BB
+JKHY,Jack Henry & Associates Inc.,177.04,A,BB,BB
+SWK,Stanley Black & Decker Inc.,85.80,A,BB,BB
+HRL,Hormel Foods Corporation,44.76,A,BB,BB
+SNA,Snap-on Incorporated,240.62,A,BB,B
+CBOE,Cboe Global Markets Inc,122.01,A,BB,BB
+WDC,Western Digital Corporation,41.75,A,BB,B
+HST,Host Hotels & Resorts Inc.,17.95,A,BB,BB
+CPT,Camden Property Trust,119.27,B,B,B
+EQT,EQT Corporation,33.28,BBB,BB,BB
+UDR,UDR Inc.,40.60,B,BB,B
+MKTX,MarketAxess Holdings Inc.,362.20,B,B,B
+TECH,Bio-Techne Corporation,79.83,A,B,BB
+CHRW,C.H. Robinson Worldwide Inc.,96.84,A,BB,BB
+CRL,Charles River Laboratories International Inc.,240.92,A,BB,B
+PKG,Packaging Corporation of America,129.15,A,BB,BB
+CE,Celanese Corporation,121.47,A,BB,BB
+DPZ,Domino's Pizza Inc.,350.50,B,B,B
+BF.B,Brown-Forman Corporation Class A,68.35,A,BB,BB
+STX,Seagate Technology Holdings PLC,66.30,A,BB,BB
+PHM,PulteGroup Inc.,51.98,B,B,B
+L,Loews Corporation,60.50,A,BB,BB
+MAS,Masco Corporation,51.32,A,BB,BB
+CDAY,Ceridian HCM Holding Inc.,71.28,AA,BB,BB
+HSIC,Henry Schein Inc.,83.85,B,B,B
+QRVO,Qorvo Inc.,110.11,A,BB,BB
+EMN,Eastman Chemical Company,90.80,AA,BB,BB
+NI,NiSource Inc,26.99,B,B,B
+TPR,Tapestry Inc.,43.04,A,BB,BB
+LYV,Live Nation Entertainment Inc.,77.09,A,BB,B
+TFX,Teleflex Incorporated,240.36,B,B,B
+CZR,Caesars Entertainment Inc,52.00,B,B,B
+GL,Globe Life Inc.,120.74,B,B,B
+KMX,CarMax Inc.,66.31,B,B,BB
+BWA,BorgWarner Inc.,44.85,BBB,BB,BB
+CPB,Campbell Soup Company,51.65,A,BB,BB
+WYNN,Wynn Resorts Limited,99.00,B,B,B
+CCL,Carnival Corporation,10.86,A,BB,BB
+BBWI,Bath & Body Works Inc.,44.76,A,BB,BB
+JNPR,Juniper Networks Inc.,31.70,B,BB,B
+AAL,American Airlines Group Inc.,16.28,BBB,B,B
+ALLE,Allegion Public Limited Company,113.35,A,BB,BB
+FOXA,Fox Corporation Class A,33.32,BB,BB,BB
+REG,Regency Centers Corporation,65.94,A,BB,BB
+BXP,Boston Properties Inc.,71.00,A,BB,BB
+UHS,Universal Health Services Inc. Class B,146.15,A,BB,BB
+BIO,Bio-Rad Laboratories Inc. Class A,456.69,B,B,BB
+VFC,V.F. Corporation,29.30,A,BB,BB
+TAP,Molson Coors Beverage Company Class B,52.92,A,BB,B
+CMA,Comerica Incorporated,71.52,BB,BB,B
+WRK,WestRock Company,36.68,A,BB,BB
+AAP,Advance Auto Parts Inc.,145.01,B,B,B
+CTLT,Catalent Inc,50.16,A,BB,BB
+HII,Huntington Ingalls Industries Inc.,215.88,A,BB,BB
+FFIV,F5 Inc.,145.49,B,B,B
+RHI,Robert Half International Inc.,78.88,BBB,BB,BB
+ROL,Rollins Inc.,36.34,A,BB,BB
+IVZ,Invesco Ltd.,18.00,B,B,BB
+PNW,Pinnacle West Capital Corporation,73.75,A,BBB,BB
+WHR,Whirlpool Corporation,152.03,A,BB,BB
+PNR,Pentair plc,50.74,BBB,BB,BB
+BEN,Franklin Resources Inc.,30.97,BB,BBB,BB
+HAS,Hasbro Inc.,64.18,B,BB,BB
+FRT,Federal Realty Investment Trust,110.48,A,BB,BB
+SBNY,Signature Bank,125.95,B,B,BB
+OGN,Organon & Co.,30.64,A,BB,BB
+ZION,Zions Bancorporation N.A.,52.02,B,B,B
+AOS,A. O. Smith Corporation,60.52,A,BB,BB
+SEE,Sealed Air Corporation,51.68,A,BB,BB
+XRAY,DENTSPLY SIRONA Inc.,36.50,A,BB,BB
+NRG,NRG Energy Inc.,32.90,B,B,B
+NWSA,News Corporation Class A,20.54,A,BB,BB
+GNRC,Generac Holdings Inc.,111.16,A,BB,B
+AIZ,Assurant Inc.,130.68,A,BB,BB
+DXC,DXC Technology Co.,27.82,A,BB,BB
+NCLH,Norwegian Cruise Line Holdings Ltd.,15.41,A,BB,BB
+ALK,Alaska Air Group Inc.,51.15,A,BB,B
+MHK,Mohawk Industries Inc.,118.59,A,B,B
+NWL,Newell Brands Inc,15.75,A,BB,BB
+RL,Ralph Lauren Corporation Class A,126.87,BBB,B,BB
+LNC,Lincoln National Corp,32.80,A,BB,BB
+LUMN,Lumen Technologies Inc.,5.29,A,BB,BB
+FOX,Fox Corporation Class B,31.33,CC,B,B
+DVA,DaVita Inc.,77.48,BB,BB,BB
+DISH,DISH Network Corporation Class A,14.20,B,B,B
+NWS,News Corporation Class B,20.90,A,BB,BB

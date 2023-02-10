@@ -1,0 +1,7 @@
+stock_symbol,company_name,current_stock_price,number_stock_shares,transaction_total_value,transaction_type,transaction_time,investor_id,stock_id
+CNP,CenterPoint Energy Inc.,3004,10,30040,buy,20230102,3,328
+LVS,Las Vegas Sands Corp.,5522,2,11044,buy,20230102,3,334
+MSFT,Microsoft Corporation,23989,4,95956,sale,20230102,3,2
+SBUX,Starbucks Corporation,10678,5,53390,buy,20230102,3,63
+JNJ,Johnson & Johnson,16946,8,135568,buy,20230103,3,10
+JPM,JPMorgan Chase & Co.,13892,12,166704,buy,20230103,3,11
