@@ -40,7 +40,6 @@ class Investor(db.Model):
             "transactions": transactions_list
         }
 
-    #convert numeric values from string to float??
     @classmethod
     def from_dict(cls, request_body):
         return Investor(

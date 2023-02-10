@@ -51,6 +51,5 @@ def create_app(test_config=None):
     from .exchange_routes import exchange_bp
     app.register_blueprint(exchange_bp)
 
-    app.config["CORS_HEADERS"] = "Content-Type"
     CORS(app)
     return app

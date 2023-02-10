@@ -7,6 +7,7 @@ from app.models.exchange import Exchange
 from app.exchange_routes import validate_model
 import os, requests
 import datetime
+from flask_cors import cross_origin
 
 # create blueprint here
 register_bp = Blueprint("register_bp", __name__, url_prefix="/register")
@@ -145,10 +146,10 @@ def create_buy_transaction_associated_with_investor(investor_id):
     stock_id = 0
 
     request_body = request.get_json()
+
     for stock in stocks:
         if stock.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
             stock_id = stock.to_dict()["stock_id"]
-        print(stock.to_dict())
     print(request_body)
 
     for exchange in exchanges:
@@ -160,15 +161,13 @@ def create_buy_transaction_associated_with_investor(investor_id):
         investor_id=investor_id,
         stock_symbol=request_body["stock_symbol"],
         company_name=company_name,
-        current_stock_price=request_body["current_stock_price"],
+        current_stock_price=round(float(request_body["current_stock_price"]) * 100),
         number_stock_shares=request_body["number_stock_shares"],
-        transaction_total_value= int(request_body["number_stock_shares"]) * (request_body["current_stock_price"] * 100),
+        transaction_total_value= int(request_body["number_stock_shares"])* round(float(request_body["current_stock_price"]) * 100),
         transaction_type=request_body["transaction_type"],  
         transaction_time=datetime.datetime.now()
         )
-    # new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * (request_body["current_stock_price"] * 100)
     
-    # investor.total_shares_cash_value = new_transaction.transaction_total_value
     investor.cash_balance -= new_transaction.transaction_total_value 
     investor.total_shares_cash_value += new_transaction.transaction_total_value 
     investor.total_assets_balance = investor.cash_balance + investor.total_shares_cash_value
@@ -178,8 +177,7 @@ def create_buy_transaction_associated_with_investor(investor_id):
 
     response_body = investor.to_dict()
 
-    # return new_transaction.to_dict(), 201
-    return make_response(response_body, 200)
+    return make_response(response_body, 201)
 
     
 
@@ -188,30 +186,33 @@ def create_buy_transaction_associated_with_investor(investor_id):
 def create_sell_transaction_associated_with_investor(investor_id):
     investor = validate_model(Investor, investor_id)
     stocks = Stock.query.all()
-
+    exchanges= Exchange.query.all()
 
     stock_id = 0
 
     request_body = request.get_json()
+
     for stock in stocks:
         if stock.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
             stock_id = stock.to_dict()["stock_id"]
-        print(stock.to_dict())
     print(request_body)
+
+    for exchange in exchanges:
+        if exchange.to_dict()["stock_symbol"] == request_body["stock_symbol"]:
+            company_name = exchange.to_dict()["company_name"] 
 
     new_transaction = Transaction(
         stock_id=stock_id,
         investor_id=investor_id,
         stock_symbol=request_body["stock_symbol"],
-        company_name=request_body["company_name"],
-        current_stock_price=request_body["current_stock_price"],
+        company_name=company_name,
+        current_stock_price=round(float(request_body["current_stock_price"]) * 100),
         number_stock_shares=request_body["number_stock_shares"],
-        transaction_total_value=request_body["transaction_total_value"],
-        transaction_type=request_body["transaction_type"],
-        transaction_time=request_body["transaction_time"]
+        transaction_total_value= int(request_body["number_stock_shares"])* round(float(request_body["current_stock_price"]) * 100),
+        transaction_type=request_body["transaction_type"],  
+        transaction_time=datetime.datetime.now()
         )
-    new_transaction.transaction_total_value = int(request_body["number_stock_shares"]) * int(request_body["current_stock_price"])
-    
+
     investor.cash_balance += new_transaction.transaction_total_value 
     investor.total_shares_cash_value -= new_transaction.transaction_total_value 
     investor.total_assets_balance = investor.cash_balance + investor.total_shares_cash_value
@@ -219,8 +220,9 @@ def create_sell_transaction_associated_with_investor(investor_id):
     db.session.add(new_transaction)
     db.session.commit()
 
+    response_body = investor.to_dict()
 
-    return new_transaction.to_dict(), 201
+    return make_response(response_body, 201)
 
 
 # PATCH/UPDATE ADD MONEY TO INVESTOR CASH BALANCE
