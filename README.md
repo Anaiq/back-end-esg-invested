@@ -24,7 +24,6 @@ PostgreSQL
 Getting Started
 Clone the repo
 git clone https://github.com/Anaiq/front-end-esg-invested.git
-Install NPM/yarn packages
 
 Usage
 "Register for a new account.  Go to About page to learn more about ESG Investing.  Search the "stock exchange" to buy
