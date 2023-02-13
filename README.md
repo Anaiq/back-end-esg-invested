@@ -23,7 +23,7 @@ PostgreSQL
 
 Getting Started
 Clone the repo
-git clone https://github.com/Anaiq/front-end-esg-invested.git
+git clone https://github.com/Anaiq/back-end-esg-invested.git
 
 Usage
 "Register for a new account.  Go to About page to learn more about ESG Investing.  Search the "stock exchange" to buy
