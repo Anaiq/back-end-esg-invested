@@ -55,4 +55,5 @@ class Investor(db.Model):
             e_goal=request_body["e_goal"],
             s_goal=request_body["s_goal"],
             g_goal=request_body["g_goal"],
+            transactions=request_body["transactions"]
         )
