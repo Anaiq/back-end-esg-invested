@@ -1,22 +1,28 @@
 from app import db
 
 # ONE to many relationship with Transaction
-class Investor(db.Model):
-    investor_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
-    investor_name = db.Column(db.String, nullable=False)
-    cash_balance = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
-    total_shares_buys = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
-    total_shares_sales = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
-    total_shares_cash_value = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
-    total_assets_balance = db.Column(db.Integer,nullable=False, server_default=db.text("0"))
-    current_e_rating = db.Column(db.String, nullable=False, server_default="")
-    current_s_rating = db.Column(db.String,nullable=False, server_default="")
-    current_g_rating = db.Column(db.String,nullable=False, server_default="")
-    e_goal = db.Column(db.String,nullable=False, server_default="")
-    s_goal = db.Column(db.String,nullable=False, server_default="")
-    g_goal = db.Column(db.String,nullable=False, server_default="")
-    transactions = db.relationship("Transaction", back_populates="investor", lazy=True)
 
+class Investor(db.Model):
+    investor_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    # can use username or email here , label as unique=true
+    investor_name = db.Column(db.String, nullable=False)
+    cash_balance = db.Column(db.Integer, nullable=False, server_default=db.text("0"))
+    total_shares_buys = db.Column(
+        db.Integer, nullable=False, server_default=db.text("0"))
+    total_shares_sales = db.Column(
+        db.Integer, nullable=False, server_default=db.text("0"))
+    total_shares_cash_value = db.Column(
+        db.Integer, nullable=False, server_default=db.text("0"))
+    total_assets_balance = db.Column(
+        db.Integer, nullable=False, server_default=db.text("0"))
+    current_e_rating = db.Column(db.String, nullable=False, server_default="")
+    current_s_rating = db.Column(db.String, nullable=False, server_default="")
+    current_g_rating = db.Column(db.String, nullable=False, server_default="")
+    e_goal = db.Column(db.String, nullable=False, server_default="")
+    s_goal = db.Column(db.String, nullable=False, server_default="")
+    g_goal = db.Column(db.String, nullable=False, server_default="")
+    transactions = db.relationship(
+        "Transaction", back_populates="investor", lazy=True)
 
     def to_dict(self):
         transactions_list = []
