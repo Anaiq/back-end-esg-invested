@@ -4,15 +4,7 @@
 
 ESG Invested
 
-Project Description:
-This is a Capstone project for Ada Developers Academy Digital Campus-cohort 18.  
-This idea stemmed from my own desire to learn how to invest but wanted also to
-have data to also consider a company's mission and values when it came to environmental,
-social, and governance concerns.
-
-ESGInvesting application was built to allow investors to also consider a company's 
-Environmental, Social, and Governance impact when directing where they invest their
-money.
+Project Description: This is a Capstone project for Ada Developers Academy Digital Campus-cohort 18. This idea stemmed from my own fascination with personal finance and investing. ESGInvesting application was built because I wanted to also consider a company's mission and values regarding environmental, social, and governance practices in order to ensure that the investments align with my ethical standards, contribute positively to society, and promote long-term financial sustainability.
 
 Tech Stack:
 This project was built with:
