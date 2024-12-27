@@ -48,6 +48,6 @@ Open a Pull Request
 <h2>Acknowledgments/Credits</h2>
 Project Manager: Ansel Rognlie
 
-MIT License - Copyright © 2022 Qiana Partee
+MIT License - Copyright © 2025 Qiana Partee
 
 
